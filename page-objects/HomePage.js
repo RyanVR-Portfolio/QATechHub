@@ -1,4 +1,4 @@
-export class Navigation {
+export class Home {
     constructor(page) {
         this.page = page
 
