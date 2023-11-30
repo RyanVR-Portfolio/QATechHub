@@ -27,14 +27,14 @@ export class Navigation {
         await this.page.goto('/')
         await this.btnTitle.waitFor()
         await this.btnTitle.click()
-        await expect(this.page).toHaveURL('https://test.qatechhub.com/')
+        await expect(this.page).toHaveURL('./')
     }
 
     navToHomeViaHomeLink = async () => {
         await this.page.goto('/')
         await this.linkHome.waitFor()
         await this.linkHome.click()
-        await expect(this.page).toHaveURL('https://test.qatechhub.com/')
+        await expect(this.page).toHaveURL('./')
     }
 
     navToFormElements = async () => {
@@ -42,7 +42,7 @@ export class Navigation {
         await this.linkWebComponents.hover()
         await this.optionFormElements.isVisible()
         await this.optionFormElements.click()
-        await expect(this.page).toHaveURL('https://test.qatechhub.com/form-elements/')
+        await expect(this.page).toHaveURL('./form-elements/')
     }
 
     navToFileDownload = async () => {
@@ -50,7 +50,7 @@ export class Navigation {
         await this.linkWebComponents.hover()
         await this.optionFileDownload.isVisible()
         await this.optionFileDownload.click()
-        await expect(this.page).toHaveURL('https://test.qatechhub.com/file-download/')
+        await expect(this.page).toHaveURL('./file-download/')
     }
 
     navToAlertHandling = async () => {
@@ -58,7 +58,7 @@ export class Navigation {
         await this.linkAlertsAndWindows.hover()
         await this.optionAlertHandling.isVisible()
         await this.optionAlertHandling.click()
-        await expect(this.page).toHaveURL('https://test.qatechhub.com/alert-handling/')
+        await expect(this.page).toHaveURL('./alert-handling/')
     }
 
     navToWindowHandling = async () => {
@@ -66,7 +66,7 @@ export class Navigation {
         await this.linkAlertsAndWindows.hover()
         await this.optionWindowHandling.isVisible()
         await this.optionWindowHandling.click()
-        await expect(this.page).toHaveURL('https://test.qatechhub.com/window-handling/')
+        await expect(this.page).toHaveURL('./window-handling/')
     }
 
     navToAccordion = async () => {
@@ -74,7 +74,7 @@ export class Navigation {
         await this.linkWidgets.hover()
         await this.optionAccordion.isVisible()
         await this.optionAccordion.click()
-        await expect(this.page).toHaveURL('https://test.qatechhub.com/accordion/')
+        await expect(this.page).toHaveURL('./accordion/')
     }
     
     navToAutoComplete = async () => {
@@ -82,7 +82,7 @@ export class Navigation {
         await this.linkWidgets.hover()
         await this.optionAutoComplete.isVisible()
         await this.optionAutoComplete.click()
-        await expect(this.page).toHaveURL('https://test.qatechhub.com/auto-complete/')
+        await expect(this.page).toHaveURL('./auto-complete/')
     }
 
     navToDatePicker = async () => {
@@ -90,7 +90,7 @@ export class Navigation {
         await this.linkWidgets.hover()
         await this.optionDatePicker.isVisible()
         await this.optionDatePicker.click()
-        await expect(this.page).toHaveURL('https://test.qatechhub.com/date-picker/')
+        await expect(this.page).toHaveURL('./date-picker/')
     }
 
     navToSelectable = async () => {
@@ -98,7 +98,7 @@ export class Navigation {
         await this.linkInteractions.hover()
         await this.optionSelectable.isVisible()
         await this.optionSelectable.click()
-        await expect(this.page).toHaveURL('https://test.qatechhub.com/selectable/')
+        await expect(this.page).toHaveURL('./selectable/')
     }
 
     navToDragAndDrop = async () => {
@@ -106,6 +106,6 @@ export class Navigation {
         await this.linkInteractions.hover()
         await this.optionDragAndDrop.isVisible()
         await this.optionDragAndDrop.click()
-        await expect(this.page).toHaveURL('https://test.qatechhub.com/drag-and-drop/')
+        await expect(this.page).toHaveURL('./drag-and-drop/')
     }
 }
