@@ -55,7 +55,7 @@ export class AlertHandling {
         await this.btnCustomAlert.click()
     }
 
-    promptAlerts = async () => {
+    promptAlertsConfirm = async () => {
         await expect(this.page).toHaveURL('./alert-handling/')
 
         await this.btnPromptAlert.waitFor()
@@ -67,5 +67,20 @@ export class AlertHandling {
           });
         await this.btnPromptAlert.click();
         await expect(this.page.getByText('Hello Mako Tsunami! Happy')).toBeVisible()
+    }
+
+    promptAlertsDismiss = async () => {
+        await this.page.reload()
+        await expect(this.page).toHaveURL('./alert-handling/')
+
+        await this.btnPromptAlert.waitFor()
+        await expect(this.txtPromptAlert).toBeVisible()
+
+        this.page.once('dialog', dialog => {
+            console.log(`Dialog message: ${dialog.message()}`);
+            dialog.dismiss()//.catch(() => {});
+          });
+        await this.btnPromptAlert.click();
+        await expect(this.page.getByText('Hello Mako Tsunami! Happy')).not.toBeVisible()
     }
 }

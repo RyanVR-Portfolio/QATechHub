@@ -2,7 +2,11 @@ import { test } from "@playwright/test";
 import { expect } from "@playwright/test";
 import { Navigation } from "../page-objects/Navigation";
 import { Home } from "../page-objects/HomePage";
-import { AlertHandling } from "../page-objects/AlertHandlingPage";
+import { AlertHandling } from "../page-objects/AlertHandlingPage"; 
+
+// Tests will be listed in a workflow format to start, 
+// and will then be separated out into specific cases after 
+// they have been shown to work properly
 
 test ('Tests for top bar navigation and verification, no page behavior', async ({ page }) => {
   const nav = new Navigation(page)
@@ -44,5 +48,6 @@ test ('Tests for Alert Handling', async ({ page }) => {
   await nav.navToAlertHandling()
   await alert.normalAlerts()
   await alert.customAlertsConfirm()
-  await alert.promptAlerts()
+  await alert.promptAlertsConfirm()
+  await alert.promptAlertsDismiss()
 });
