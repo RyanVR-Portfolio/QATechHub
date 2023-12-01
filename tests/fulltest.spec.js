@@ -3,6 +3,7 @@ import { expect } from "@playwright/test";
 import { Navigation } from "../page-objects/Navigation";
 import { Home } from "../page-objects/HomePage";
 import { AlertHandling } from "../page-objects/AlertHandlingPage"; 
+import { FormElements } from "../page-objects/FormElementsPage";
 
 // Tests will be listed in a workflow format to start, 
 // and will then be separated out into specific cases after 
@@ -50,4 +51,16 @@ test ('Tests for Alert Handling', async ({ page }) => {
   await alert.customAlertsConfirm()
   await alert.promptAlertsConfirm()
   await alert.promptAlertsDismiss()
+});
+
+test ('Tests for Form Elements', async ({ page }) => {
+  const forms = new FormElements(page)
+  const nav = new Navigation(page)
+  await nav.navToFormElements()
+  await forms.fillName()
+  await forms.fillEmail()
+  await forms.fillPhoneNum()
+  await forms.selectMaleGender()
+  await forms.selectFemaleGender()
+  //await forms.selectDropdownOptions()
 });
