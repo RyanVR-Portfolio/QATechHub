@@ -27,6 +27,7 @@ export class Navigation {
         await this.page.goto('/')
         await this.btnTitle.waitFor()
         await this.btnTitle.click()
+        await this.btnTitle.waitFor()
         await expect(this.page).toHaveURL('./')
     }
 
@@ -34,6 +35,7 @@ export class Navigation {
         await this.page.goto('/')
         await this.linkHome.waitFor()
         await this.linkHome.click()
+        await this.linkHome.waitFor()
         await expect(this.page).toHaveURL('./')
     }
 
@@ -42,6 +44,7 @@ export class Navigation {
         await this.linkWebComponents.hover()
         await this.optionFormElements.isVisible()
         await this.optionFormElements.click()
+        await this.linkWebComponents.waitFor()
         await expect(this.page).toHaveURL('./form-elements/')
     }
 
@@ -50,6 +53,7 @@ export class Navigation {
         await this.linkWebComponents.hover()
         await this.optionFileDownload.isVisible()
         await this.optionFileDownload.click()
+        await this.linkWebComponents.waitFor()
         await expect(this.page).toHaveURL('./file-download/')
     }
 
@@ -58,6 +62,7 @@ export class Navigation {
         await this.linkAlertsAndWindows.hover()
         await this.optionAlertHandling.isVisible()
         await this.optionAlertHandling.click()
+        await this.linkAlertsAndWindows.waitFor()
         await expect(this.page).toHaveURL('./alert-handling/')
     }
 
@@ -66,6 +71,7 @@ export class Navigation {
         await this.linkAlertsAndWindows.hover()
         await this.optionWindowHandling.isVisible()
         await this.optionWindowHandling.click()
+        await this.linkAlertsAndWindows.waitFor()
         await expect(this.page).toHaveURL('./window-handling/')
     }
 
@@ -82,6 +88,7 @@ export class Navigation {
         await this.linkWidgets.hover()
         await this.optionAutoComplete.isVisible()
         await this.optionAutoComplete.click()
+        await this.linkWidgets.waitFor()
         await expect(this.page).toHaveURL('./auto-complete/')
     }
 
@@ -90,6 +97,7 @@ export class Navigation {
         await this.linkWidgets.hover()
         await this.optionDatePicker.isVisible()
         await this.optionDatePicker.click()
+        await this.linkWidgets.waitFor()
         await expect(this.page).toHaveURL('./date-picker/')
     }
 
@@ -98,6 +106,7 @@ export class Navigation {
         await this.linkInteractions.hover()
         await this.optionSelectable.isVisible()
         await this.optionSelectable.click()
+        await this.linkInteractions.waitFor()
         await expect(this.page).toHaveURL('./selectable/')
     }
 
@@ -106,6 +115,7 @@ export class Navigation {
         await this.linkInteractions.hover()
         await this.optionDragAndDrop.isVisible()
         await this.optionDragAndDrop.click()
+        await this.linkInteractions.waitFor()
         await expect(this.page).toHaveURL('./drag-and-drop/')
     }
 }

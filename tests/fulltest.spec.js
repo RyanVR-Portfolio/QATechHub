@@ -37,3 +37,12 @@ test ('Tests for Home page navigation and verification', async ({ page }) => {
   await home.homeToSelectable()
   await home.homeToWindowHandling()
 });
+
+test ('Tests for Alert Handling', async ({ page }) => {
+  const alert = new AlertHandling(page)
+  const nav = new Navigation(page)
+  await nav.navToAlertHandling()
+  await alert.normalAlerts()
+  await alert.customAlertsConfirm()
+  await alert.promptAlerts()
+});
