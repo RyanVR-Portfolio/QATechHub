@@ -26,6 +26,10 @@ export class FormElements {
 
         this.hdrCourseInterest = page.getByText('Courses Interested In *')
         this.drpCourseInterest = page.getByLabel('Courses Interested In *') //Options: Selenium | Cypress | TestComplete
+    
+        this.btnSubmitFormElements = page.getByRole('button', { name: 'Submit' })
+        this.fldSubmitFormSuccess = page.locator('#wpforms-confirmation-49')
+        this.txtSubmitFormSuccess = page.getByText('You have successfully filled in the form!')
     }
 
     fillName = async () => {
@@ -84,5 +88,23 @@ export class FormElements {
 
         await this.hdrCourseInterest.waitFor()
         await expect(this.hdrCourseInterest).toBeVisible()
+
+        await this.drpCourseInterest.selectOption(['Selenium','Cypress','TestComplete'])
+    
+        // var optCourseInterests = ['Selenium','Cypress','TestComplete']
+
+        // for (var optCourseInterest of optCourseInterests) {
+        //     await this.drpCourseInterest.selectOption(optCourseInterest)
+        // }
+    }
+
+    submitFormElements = async () => {
+        await expect(this.page).toHaveURL('./form-elements/')
+
+        await this.btnSubmitFormElements.waitFor()
+        await this.btnSubmitFormElements.click()
+
+        await this.fldSubmitFormSuccess.waitFor()
+        await expect(this.txtSubmitFormSuccess).toBeVisible()
     }
 }

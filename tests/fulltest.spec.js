@@ -62,5 +62,6 @@ test ('Tests for Form Elements', async ({ page }) => {
   await forms.fillPhoneNum()
   await forms.selectMaleGender()
   await forms.selectFemaleGender()
-  //await forms.selectDropdownOptions()
+  await forms.selectDropdownOptions()
+  await forms.submitFormElements()
 });
