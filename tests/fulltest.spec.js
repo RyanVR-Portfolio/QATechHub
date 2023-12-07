@@ -4,7 +4,8 @@ import { Navigation } from "../page-objects/Navigation";
 import { Home } from "../page-objects/HomePage";
 import { AlertHandling } from "../page-objects/AlertHandlingPage"; 
 import { FormElements } from "../page-objects/FormElementsPage";
-import { FileDownloads } from "../page-objects/FileDownloads";
+import { FileDownloads } from "../page-objects/FileDownloadsPage";
+import { WindowHandling } from "../page-objects/WindowHandlingPage";
 
 // Tests will be listed in a workflow format to start, 
 // and will then be separated out into specific cases after 
@@ -72,4 +73,11 @@ test ('Tests for File Downloads', async({ page }) => {
   const nav = new Navigation(page)
   await nav.navToFileDownload()
   await dwnlds.viewSeleniumCourse()
+});
+
+test ('Tests for Window Handling', async ({ page }) => {
+  const wndw = new WindowHandling(page)
+  const nav = new Navigation(page)
+  await nav.navToWindowHandling()
+  await wndw.openWindowHandling()
 });
