@@ -4,6 +4,7 @@ import { Navigation } from "../page-objects/Navigation";
 import { Home } from "../page-objects/HomePage";
 import { AlertHandling } from "../page-objects/AlertHandlingPage"; 
 import { FormElements } from "../page-objects/FormElementsPage";
+import { FileDownloads } from "../page-objects/FileDownloads";
 
 // Tests will be listed in a workflow format to start, 
 // and will then be separated out into specific cases after 
@@ -64,4 +65,11 @@ test ('Tests for Form Elements', async ({ page }) => {
   await forms.selectFemaleGender()
   await forms.selectDropdownOptions()
   await forms.submitFormElements()
+});
+
+test ('Tests for File Downloads', async({ page }) => {
+  const dwnlds = new FileDownloads(page)
+  const nav = new Navigation(page)
+  await nav.navToFileDownload()
+  await dwnlds.viewSeleniumCourse()
 });
